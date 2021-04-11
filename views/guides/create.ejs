@@ -1,0 +1,29 @@
+<html lang="en">
+    <%- include('../partials/head.ejs') %> <!-- passes in what ever is in the head.ejs file -->
+<body>
+    <%- include('../partials/nav.ejs') %> <!-- passes in what ever is in the nav.ejs file -->
+
+    <div class="create-blog content">
+        <form action='/guides' method="POST">   <!-- submits a psot request -->
+            <label for="title">Title:</label>
+            <input type="text" id="title" name='title' required>
+
+            <label for="game">Game:</label>
+            <input type="text" id="game"  name='game'required>
+
+            <label for="difficulty">Guide Diffuculty:</label>
+            <input type="text" id="difficulty" name="difficulty" required>
+
+            <label for="body">Body:</label>
+            <textarea id="body" required name="body"></textarea>
+
+            <label for="snippet">Snippet:</label>
+            <input type="text" id="snippet" name='snippet' required>
+            
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <%- include('../partials/footer.ejs') %> <!-- passes in what ever is in the footer.ejs file -->
+</body>
+</html>

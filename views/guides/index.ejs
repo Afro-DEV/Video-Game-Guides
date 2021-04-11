@@ -1,0 +1,29 @@
+<html lang="en">
+
+    <%- include('../partials/head.ejs') %> <!-- passes in what ever is in the head.ejs file -->
+
+<body>
+
+   <%- include('../partials/nav.ejs') %> <!-- passes in what ever is in the nav.ejs file -->
+
+    <div class="blogs content">
+        <h2 class='subheading'>All Guides</h2>
+
+        <% if (blogs.length > 0) { %> 
+            <% blogs.forEach(blog => { %> 
+                <a class="single" href="/guides/<%= blog._id %>">
+                <h3 class="title"><%= blog.title %></h3>
+                <p class = 'game'>-<%= blog.game %> </p>
+                <p class="snippet"><%= blog.snippet%>...</p>
+                <p class="difficulty">-<%= blog.difficulty %></p>
+            </a>
+                <% }) %> 
+            <% } else {%> 
+                <p>there are no Guides</p>
+            <% } %> 
+    </div>
+
+    <%- include('../partials/footer.ejs') %> <!-- passes in what ever is in the footer.ejs file -->
+</body>
+</html>
+
